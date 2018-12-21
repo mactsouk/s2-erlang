@@ -26,4 +26,7 @@ blocks:
       - name: Hello World
         commands:
           - checkout
+          - erlc hello.erl
+          - ls -l
+          - erl -noshell -s hello helloWorld -s init stop
 
