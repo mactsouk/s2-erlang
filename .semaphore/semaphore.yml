@@ -23,10 +23,17 @@ blocks:
   - name: Compile Erlang code
     task:
       jobs:
-      - name: Hello World
+      - name: Hello World 21.0
         commands:
           - checkout
           - erlc hello.erl
           - ls -l
           - erl -noshell -s hello helloWorld -s init stop
 
+      - name: Hello World 20.3
+        commands:
+          - checkout
+          - . /home/semaphore/.kerl/installs/20.3/activate
+          - erlc hello.erl
+          - ls -l
+          - erl -noshell -s hello helloWorld -s init stop
