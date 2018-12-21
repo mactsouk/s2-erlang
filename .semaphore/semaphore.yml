@@ -13,10 +13,11 @@ blocks:
         commands:
           - checkout
           - kerl status
-          - . /home/semaphore/.kerl/installs/21.0/activate
-          - kerl active
           - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
           - . /home/semaphore/.kerl/installs/20.3/activate
+          - kerl active
+          - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
+          - . /home/semaphore/.kerl/installs/21.0/activate
           - kerl active
           - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
 
