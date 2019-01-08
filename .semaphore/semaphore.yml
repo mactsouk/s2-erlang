@@ -14,10 +14,10 @@ blocks:
           - checkout
           - kerl status
           - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
-          - . /home/semaphore/.kerl/installs/20.3/activate
+          - sem-version erlang 20 
           - kerl active
           - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
-          - . /home/semaphore/.kerl/installs/21.0/activate
+          - sem-version erlang 21
           - kerl active
           - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
 
@@ -34,7 +34,8 @@ blocks:
       - name: Hello World 20.3
         commands:
           - checkout
-          - . /home/semaphore/.kerl/installs/20.3/activate
+          - sem-version erlang 20
           - erlc hello.erl
           - ls -l
           - erl -noshell -s hello helloWorld -s init stop
+
